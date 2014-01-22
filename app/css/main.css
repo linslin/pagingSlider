@@ -1,0 +1,40 @@
+/**
+ * pagingSlider - main.css
+ *
+ * @category  Mobile-Hybrid
+ * @package   pagingSlider
+ * @author    Nils Gajsek <nils.gajsek@glanzkinder.com>
+ * @copyright 2013-2014 GLANZKINDER GmbH
+ * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
+ * @version   0.1
+ * @link      https://github.com/linslin
+ *
+ */
+
+* { -webkit-user-select: none; }
+body {font-family:helvetica; }
+h1, h2 { margin:0; }
+h4 {margin: 35px 0 0 0; }
+#wrapper { width:500px; height:500px; border:1px solid #cecece; margin: 0 auto; }
+
+/* pageSlider content */
+.slidepage-container { height:440px; position:relative; overflow: hidden; }
+.slidepage-container .content { padding:15px; }
+
+/** Page footer menu **/
+.footer-menu ul.pager { height:19px; text-align:center; }
+.footer-menu ul.pager li { height: 9px; width: 9px; display:inline-block; }
+.footer-menu ul.pager li.first { margin-left:50%; }
+.footer-menu ul.pager li.active { background: url(../img/icons/pager-point-active.svg) no-repeat center top; }
+.footer-menu ul.pager li.inactive { background: url(../img/icons/pager-point-inactive.svg) no-repeat center top; }
+
+/**  */
+.header-menu { margin:0 auto; }
+
+
+/** paingSlider - CSS - Following lines are required for animations, etc. */
+.page { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.page.left { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); }
+.page.center { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+.page.right { -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0); }
+.page.transition { -webkit-transition-duration: .25s; transition-duration: .25s; }
