@@ -29,7 +29,6 @@ var pagingSlider = {
      * @var boolean
      */
     _disabled : false,
-        
 
     /**
      * Global - holds count of elements to overjump due to 
