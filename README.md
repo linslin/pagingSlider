@@ -6,11 +6,16 @@ Inspired by http://coenraets.org/blog/2013/03/hardware-accelerated-page-transiti
 I have written an extension. This extension allows the page slider to control several pages away, 
 retrieve individual pages and sliden from one side to another.
 
+## Useage
+Checkout and run app/index.html in Browser.
+
 
 ## Features
 
 - slide to pages with touch swipes
 - auto switch to pages by clicking menu item
+- animated mobile pagebrowser
+- integrated touch events with QuoJS
 
 
 ## Screenshots
