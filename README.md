@@ -20,6 +20,7 @@ Checkout and run app/index.html in Browser.
 
 ## Screenshots
 
+![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen3.png)
 ![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen1.png)
 ![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen2.png)
 
