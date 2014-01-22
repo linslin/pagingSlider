@@ -16,13 +16,13 @@
 /** ################## class params ################## **/
 
 	/**
-	 * Current page slider page as object
+	 * Global - Current page slider page as object
 	 * @var object
 	 */
 	var currentSliderPage = null;
 	
 	/**
-	 * holds count of elements to overjump due to 
+	 * Global - holds count of elements to overjump due to 
 	 * page slider slideToPage left direction
 	 * @var integer
 	 */
