@@ -29,11 +29,13 @@ h4 {margin: 35px 0 0 0; }
 .footer-menu ul.pager li.active { background: url(../img/icons/pager-point-active.svg) no-repeat center top; }
 .footer-menu ul.pager li.inactive { background: url(../img/icons/pager-point-inactive.svg) no-repeat center top; }
 
-/**  */
+/** Header menu */
 .header-menu { margin:0 auto; }
 
-
-/** paingSlider - CSS - Following lines are required for animations, etc. */
+/** 
+ * pagingSlider - CSS 
+ * Following lines are required for animations, etc.
+ */
 .page { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 .page.left { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); }
 .page.center { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
