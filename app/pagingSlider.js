@@ -1,10 +1,10 @@
 /**
- * pagingSlider.js - 
+ * pagingSlider.js - object class
  *
  * @category  Mobile-Hybrid
  * @package   pagingSlider
  * @author    Nils Gajsek <nils.gajsek@glanzkinder.com>
- * @copyright 2013-2014 GLANZKINDER GmbH
+ * @copyright 2013-2014 Nils Gajsek <nils.gajsek@glanzkinder.com>
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  * @version   0.1
  * @link      https://github.com/linslin
