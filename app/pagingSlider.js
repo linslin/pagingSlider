@@ -8,37 +8,43 @@
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  * @version   0.1
  * @link      https://github.com/linslin
+ * 
+ * @todo Clicking an element in menu with active pageId (Active Page = 1, clicked menu item 1 which calls page 1) will is stucking in disabled mode
+ * @todo Add advanced web view
+ * @todo Add simple cordova phonegap example
  *
  */
 
-
-
-/** ################## class params ################## **/
+var pagingSlider = {	
+		
+		
+	/** ################## class params ################## **/
+	
 
 	/**
 	 * Global - Current page slider page as object
 	 * @var object
 	 */
-	var pagingSlider_currentPage = null;
-	
+	currentPage : null,
+		
+	/**
+	 * priavte - disabled status. Will be set to true while swiping -> dont touch
+	 * @var boolean
+	 */
+	_disabled : false,
+		
+
 	/**
 	 * Global - holds count of elements to overjump due to 
 	 * page slider slideToPage left direction
 	 * @var integer
 	 */
-	var pagingSlider_pageCount = 0;
-	
-	/**
-	 * priavte Global - disabled status. Will be set to true while swiping -> dont touch
-	 * @var boolean
-	 */
-	var _pagingSlider_disabled = false;
+	_pageCount : 0,
 
 	
-
-/** ################## class methods ################## **/
-
-var pagingSlider = {	
+	
+	/** ################## class methods ################## **/
+	
 		
 	/**
 	 * Sliding a single page to another
@@ -50,7 +56,7 @@ var pagingSlider = {
 	slidePageFrom: function(viewId, pageId, from)
 	{
 		//check if disabled -> swipe is disabled while animation swipe
-		if(_pagingSlider_disabled === true){
+		if(pagingSlider._disabled === true){
 			return;
 		}
 		
@@ -85,8 +91,8 @@ var pagingSlider = {
 		    $(page).attr('class', "page current transition center");  // Position the new page and the current page at the ending position of their animation with a transition class indicating the duration of the animation
 
 		    //setup current page
-		    $(pagingSlider_currentPage).attr('class', "page transition " + direction);
-		    pagingSlider_currentPage = $(page);	
+		    $(pagingSlider.currentPage).attr('class', "page transition " + direction);
+		    pagingSlider.currentPage = $(page);	
 		    
 		   //setup current page pointer //@Todo this could be lines with nice selector and without a loop.. later
 		    $(viewId + ' .footer-menu .pager li').each(function(i, e){
@@ -111,13 +117,13 @@ var pagingSlider = {
 	 */
 	switchToPage: function(sliderPageContainer, pageId)
 	{
-		//check if disabled -> swipe is disabled while animation swipe
-		if(_pagingSlider_disabled === true){
+		//check if _disabled -> swipe is _disabled while animation swipe
+		if(pagingSlider._disabled === true){
 			return;
 		}
 		
 		//disable swiping
-		_pagingSlider_disabled = true;
+		pagingSlider._disabled = true;
 		
 		//Init vars
 		var pages = sliderPageContainer.find('.page');
@@ -136,7 +142,7 @@ var pagingSlider = {
 						
 						//done
 						if(i+1 === parseInt(pageId)) {
-							_pagingSlider_disabled = false; //enable swiping after page swipes are done
+							pagingSlider._disabled = false; //enable swiping after page swipes are done
 						}
 						
 					}, (300*((i+1)-currentPage.attr('page'))));
@@ -152,7 +158,7 @@ var pagingSlider = {
 			}			
 			
 			//RESET clogbal count
-			pagingSlider_pageCount = 0;
+			pagingSlider._pageCount = 0;
 			
 			pages.each(function(i, e){
 				// aktuelle id - neue id = IIIIII!!!
@@ -162,7 +168,7 @@ var pagingSlider = {
 						
 						//done
 						if(i === currentPage.attr('page') - parseInt(pageId)) {
-							_pagingSlider_disabled = false; //enable swiping after page swipes are done
+							pagingSlider._disabled = false; //enable swiping after page swipes are done
 						}
 						
 					}, (300*((i))));
@@ -199,22 +205,22 @@ var pagingSlider = {
 			$(e).next('.page').attr('class', "page current left");
 			$(e).next('.page').attr('class', "page current transition center");
 			$(e).attr('class', "page transition left");
-			pagingSlider_currentPage = $(e).next('.page').first();	 //set element as current global
+			pagingSlider.currentPage = $(e).next('.page').first();	 //set element as current global
 			
-		}else if(pagingSlider_pageCount < sickVar  && i-1 < (maxPageIndex-parseInt(pageId)) && direction === 'left'){
+		}else if(pagingSlider._pageCount < sickVar  && i-1 < (maxPageIndex-parseInt(pageId)) && direction === 'left'){
 			
 			//count up if direction "left"
-			pagingSlider_pageCount++;
+			pagingSlider._pageCount++;
 			
 			$(e).prev('.page').attr('class', "page current right");
 			$(e).prev('.page').attr('class', "page current transition center");
 			$(e).attr('class', "page transition right"); //set element as current global
-			pagingSlider_currentPage = $(e).prev('.page').first();	
+			pagingSlider.currentPage = $(e).prev('.page').first();	
 		}
 		
 		//setup current page pointer //@Todo this could be lines with nice selector and without a loop.. later
 		$('.footer-menu .pager li').each(function(i, e){
-			if(i+1 === parseInt(pagingSlider_currentPage.attr('page'))){
+			if(i+1 === parseInt(pagingSlider.currentPage.attr('page'))){
 				$(e).removeClass('inactive');
 				$(e).addClass('active');
 			}else{
