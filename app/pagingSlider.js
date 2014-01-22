@@ -8,6 +8,8 @@
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  * @version   0.1
  * @link      https://github.com/linslin
+ * 
+ * @todo Clicking the menu element which is the current activ page will be force a crash
  *
  */
 
@@ -16,7 +18,6 @@ var pagingSlider = {
         
     /** ################## class params ################## **/
     
-
     /**
      * public - Current page slider page as object
      * @var object
@@ -41,7 +42,7 @@ var pagingSlider = {
     
     /** ################## class methods ################## **/
     
-        
+    
     /**
      * Sliding a single page to another
      * 
