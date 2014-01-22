@@ -22,13 +22,13 @@ var pagingSlider = {
 	
 
 	/**
-	 * Global - Current page slider page as object
+	 * public - Current page slider page as object
 	 * @var object
 	 */
 	currentPage : null,
 		
 	/**
-	 * priavte - disabled status. Will be set to true while swiping -> dont touch
+	 * private - disabled status. Will be set to true while swiping -> dont touch
 	 * @var boolean
 	 */
 	_disabled : false,
