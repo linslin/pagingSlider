@@ -54,8 +54,9 @@
 	            </div>
 	        </div>
 	        <div id="badges-slidepage-10" page="10" class="page right">
-	            <div class="content"></div>
-                   <h2>Page 10</h2>
+	            <div class="content">
+	               <h2>Page 10</h2>
+	            </div>
 	        </div>
 	    </div>
 	    <div class="footer-menu">
@@ -95,7 +96,7 @@
 <script type="text/javascript">
 
     //setup current page slider page
-    currentSliderPage = $('#wrapper-inner .page.current');
+    pagingSlider_currentPage = $('#wrapper-inner .page.current');
     
 	$$('#wrapper-inner').swipeLeft(function(){
 	    pagingSlider.slidePageFrom("#wrapper-inner", "badges-slidepage-", 'right');
