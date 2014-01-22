@@ -8,8 +8,6 @@
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  * @version   0.1
  * @link      https://github.com/linslin
- * 
- * @todo Clicking the menu element which is the current activ page will be force a crash
  *
  */
 
@@ -113,13 +111,6 @@ var pagingSlider = {
      */
     switchToPage: function(sliderPageContainer, pageId)
     {
-        //check if _disabled -> swipe is _disabled while animation swipe
-        if(pagingSlider._disabled === true){
-            return;
-        }
-        
-        //disable swiping
-        pagingSlider._disabled = true;
         
         //Init vars
         var pages = sliderPageContainer.find('.page');
@@ -127,6 +118,14 @@ var pagingSlider = {
         var maxPageIndex = parseInt(pages.length-1);
         var sickDif = (maxPageIndex-parseInt(currentPage.attr('page')));
         var watchDiv = (maxPageIndex+1) -(parseInt(currentPage.attr('page')));
+        
+        //check if _disabled -> swipe is _disabled while animation swipe, also return if the current page is clicked
+        if(pagingSlider._disabled === true && currentPage.attr('page') === pageId){
+            return;
+        }
+        
+        //disable swiping
+        pagingSlider._disabled = true;
         
         
         if(parseInt(pageId) > parseInt(currentPage.attr('page'))){
