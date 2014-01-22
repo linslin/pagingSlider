@@ -8,10 +8,6 @@
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  * @version   0.1
  * @link      https://github.com/linslin
- * 
- * @todo Clicking an element in menu with active pageId (Active Page = 1, clicked menu item 1 which calls page 1) will is stucking in disabled mode
- * @todo Add advanced web view
- * @todo Add simple cordova phonegap example
  *
  */
 
