@@ -1,0 +1,5 @@
+# pagingSlider
+=======================
+
+## Notice
+test
