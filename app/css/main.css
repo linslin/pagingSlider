@@ -15,13 +15,14 @@
 body {font-family:helvetica; }
 h1, h2 { margin:0; }
 h4 {margin: 35px 0 0 0; }
-#wrapper { width:500px; height:500px; border:1px solid #cecece; margin: 0 auto; }
+#wrapper { width:500px; height:500px; border:1px solid #cecece; margin: 0 auto; background: #dedede; }
 
 /* pageSlider content */
-.slidepage-container { height:440px; position:relative; overflow: hidden; }
-.slidepage-container .content { padding:15px; }
+.slidepage-container { height:440px; position:relative; overflow: hidden;  background:#cecece;  }
+.slidepage-container .content { padding:15px;}
 
 /** Page footer menu **/
+.footer-menu ul { }
 .footer-menu ul.pager { height:19px; text-align:center; }
 .footer-menu ul.pager li { height: 9px; width: 9px; display:inline-block; }
 .footer-menu ul.pager li.first { margin-left:50%; }
