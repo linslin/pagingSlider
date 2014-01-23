@@ -57,10 +57,12 @@ retrieve individual pages and sliden from one side to another.
     </div>   
     <h4>Page menu:</h4>
     <div class="header-menu clearfix">
-        <a href="javascript:void(0);" onclick="pagingSlider.switchToPage($('.myPageContainerClass'), '1');">1</a>
-        <a href="javascript:void(0);" onclick="pagingSlider.switchToPage($('.myPageContainerClass'), '2');">2</a>
-        <a href="javascript:void(0);" onclick="pagingSlider.switchToPage($('.myPageContainerClass'), '3');">3</a>
-        <a href="javascript:void(0);" onclick="pagingSlider.switchToPage($('.myPageContainerClass'), '4');">4</a>
+        <a href="javascript:void(0);" onclick="pagingSlider.switchToPage($('.myPageContainerClass'), 1);">1</a>
+        <a href="javascript:void(0);" onclick="pagingSlider.switchToPage($('.myPageContainerClass'), 2);">2</a>
+        <a href="javascript:void(0);" onclick="pagingSlider.switchToPage($('.myPageContainerClass'), 3);">3</a>
+        <a href="javascript:void(0);" onclick="pagingSlider.switchToPage($('.myPageContainerClass'), 4);">4</a>
+        or 
+        <a href="javascript:void(0);" onclick="pagingSlider.setPage($('.myPageContainerClass'), 3);">directly call Page 3</a>
     </div>                
 </div>
 
@@ -74,11 +76,11 @@ retrieve individual pages and sliden from one side to another.
     pagingSlider.currentPage = $('#wrapper-inner .page.current');
     
     $$('#wrapper-inner').swipeLeft(function(){
-        pagingSlider.slidePageFrom("#wrapper-inner", "badges-slidepage-", 'right');
+        pagingSlider.slidePageFrom("#wrapper-inner", 'right');
     });
     
     $$('#wrapper-inner').swipeRight(function(){
-        pagingSlider.slidePageFrom("#wrapper-inner", "badges-slidepage-", 'left');
+        pagingSlider.slidePageFrom("#wrapper-inner", 'left');
     });
 </script>
 
