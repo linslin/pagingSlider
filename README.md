@@ -82,11 +82,11 @@ retrieve individual pages and sliden from one side to another.
 <script type="text/javascript" src="pagingSlider.js"></script>
 <script type="text/javascript">
     $$('#wrapper-inner').swipeLeft(function(){
-        pagingSlider.slidePageFrom("#wrapper-inner", 'right');
+        pagingSlider.slidePageFrom('.myPageContainerClass', 'right');
     });
     
     $$('#wrapper-inner').swipeRight(function(){
-        pagingSlider.slidePageFrom("#wrapper-inner", 'left');
+        pagingSlider.slidePageFrom('.myPageContainerClass', 'left');
     });
 </script>
 
