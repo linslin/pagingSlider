@@ -8,7 +8,8 @@ retrieve individual pages and sliden from one side to another.
 
 ## Useage
  - Checkout and run app/index.html in Browser.
- - Modify
+ - Modify the Template
+ - Take a look at the demo directory for cordova examples
  
 ```html
 <html>
