@@ -47,7 +47,6 @@ var app = {
         /**
          * pagingSlider binding
          */
-        pagingSlider.currentPage = $('#wrapper-inner .page.current'); //setup current page slider page
         
         $$('#wrapper-inner').swipeLeft(function(){
             pagingSlider.slidePageFrom("#wrapper-inner", 'right');
