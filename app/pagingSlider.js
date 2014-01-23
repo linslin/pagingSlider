@@ -43,11 +43,10 @@ var pagingSlider = {
     /**
      * Sliding a single page to another
      * 
-     * @param string viewID
-     * @param string pageId
+     * @param string sliderPageContainer
      * @param string from
      */
-    slidePageFrom: function(viewId, from)
+    slidePageFrom: function(sliderPageContainer, from)
     {
         
         //Init function var
@@ -62,12 +61,12 @@ var pagingSlider = {
         switch(from){
             case 'left':
                 direction = 'right';
-                page = $(viewId + ' .slidepage-container .page.current').prev().first()
+                page = $(sliderPageContainer + ' .slidepage-container .page.current').prev().first();
             break;
             
             case 'right':
                 direction = 'left';
-                page = $(viewId + ' .slidepage-container .page.current').next().first()
+                page = $(sliderPageContainer + ' .slidepage-container .page.current').next().first();
             break;
         }
        
@@ -83,7 +82,7 @@ var pagingSlider = {
             pagingSlider.currentPage = page;    
             
            //setup current page pointer //@Todo this could be lines with nice selector and without a loop.. later
-            $(viewId + ' .footer-menu .pager li').each(function(i, e){
+            $(sliderPageContainer + ' .footer-menu .pager li').each(function(i, e){
                 if(i+1 === parseInt(page.attr('page'))){
                     $(e).removeClass('inactive');
                     $(e).addClass('active');
@@ -228,6 +227,15 @@ var pagingSlider = {
      */
     setPage: function(sliderPageContainer, pageId)
     {
+
+    	var prevPage = $(sliderPageContainer + " .slidepage-container .page.current [page='"+pageId+"']").prev().first();
+//    	console.log(prevPage);
+//    	prevPage.attr('class', 'page transition left');
     	
+    	var currenTpage = $(sliderPageContainer + ' .slidepage-container .page.current');
+//    	currenTpage.attr('class', 'page current transition center');
+    	
+    	var nextPage = $(sliderPageContainer + ' .slidepage-container .page.current').next().first();
+//    	nextPage.attr('class', 'page right');
     }
 };
