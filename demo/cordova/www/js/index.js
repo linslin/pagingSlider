@@ -49,11 +49,11 @@ var app = {
          */
         
         $$('#wrapper-inner').swipeLeft(function(){
-            pagingSlider.slidePageFrom("#wrapper-inner", 'right');
+            pagingSlider.slidePageFrom(".myPageContainerClass", 'right');
         });
         
         $$('#wrapper-inner').swipeRight(function(){
-            pagingSlider.slidePageFrom("#wrapper-inner", 'left');
+            pagingSlider.slidePageFrom(".myPageContainerClass", 'left');
         });
         
         app.receivedEvent('deviceready');
