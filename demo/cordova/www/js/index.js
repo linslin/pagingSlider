@@ -50,11 +50,11 @@ var app = {
         pagingSlider.currentPage = $('#wrapper-inner .page.current'); //setup current page slider page
         
         $$('#wrapper-inner').swipeLeft(function(){
-            pagingSlider.slidePageFrom("#wrapper-inner", "badges-slidepage-", 'right');
+            pagingSlider.slidePageFrom("#wrapper-inner", 'right');
         });
         
         $$('#wrapper-inner').swipeRight(function(){
-            pagingSlider.slidePageFrom("#wrapper-inner", "badges-slidepage-", 'left');
+            pagingSlider.slidePageFrom("#wrapper-inner", 'left');
         });
         
         app.receivedEvent('deviceready');

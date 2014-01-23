@@ -47,50 +47,44 @@ var pagingSlider = {
      * @param string pageId
      * @param string from
      */
-    slidePageFrom: function(viewId, pageId, from)
+    slidePageFrom: function(viewId, from)
     {
+        
+        //Init function var
+        var direction = '';
+        
         //check if disabled -> swipe is disabled while animation swipe
         if(pagingSlider._disabled === true){
             return;
         }
         
-        //Init function var
-        var direction = '';
-        var fullPageId = '';
-        var nextPageId = null;
-        
+        //switch direction
         switch(from){
-        
             case 'left':
                 direction = 'right';
-                nextPageId = parseInt($(viewId + ' .slidepage-container .page.current').attr('page')) - 1;
-                fullPageId = pageId + nextPageId;
+                page = $(viewId + ' .slidepage-container .page.current').prev().first()
             break;
             
             case 'right':
                 direction = 'left';
-                nextPageId = parseInt($(viewId + ' .slidepage-container .page.current').attr('page')) + 1;
-                fullPageId = pageId + nextPageId;
+                page = $(viewId + ' .slidepage-container .page.current').next().first()
             break;
         }
-        
-        //get next page
-        page = $('#' + fullPageId);
-        
+       
         
         if(page.length > 0){
             
             //switch css classes
             $(page).attr('class', "page current" + from); // Position the page at the starting position of the animation
             $(page).attr('class', "page current transition center");  // Position the new page and the current page at the ending position of their animation with a transition class indicating the duration of the animation
-
-            //setup current page
             $(pagingSlider.currentPage).attr('class', "page transition " + direction);
-            pagingSlider.currentPage = $(page);    
+            
+            //setup current page
+            pagingSlider.currentPage = page;    
             
            //setup current page pointer //@Todo this could be lines with nice selector and without a loop.. later
             $(viewId + ' .footer-menu .pager li').each(function(i, e){
-                if(i+1 === nextPageId){
+                if(i+1 === parseInt(page.attr('page'))){
                     $(e).removeClass('inactive');
                     $(e).addClass('active');
                 }else{
@@ -224,5 +218,16 @@ var pagingSlider = {
                 $(e).addClass('inactive');
             }
         });
+    },
+    
+    
+    /**
+     * Directly call an other page or set a current page before display
+     * 
+     * @param string pageId
+     */
+    setPage: function(sliderPageContainer, pageId)
+    {
+    	
     }
 };

@@ -92,7 +92,7 @@ retrieve individual pages and sliden from one side to another.
 - slide to pages with touch swipes
 - auto switch to pages by clicking menu item
 - animated mobile pagebrowser
-- integrated touch events with QuoJS
+- integrated touch events with quoJS
 
 
 ## Screenshots
