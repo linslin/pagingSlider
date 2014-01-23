@@ -16,7 +16,6 @@ var pagingSlider = {
         
     /** ################## class params ################## **/
     
-
     /**
      * public - Current page slider page as object
      * @var object
@@ -28,7 +27,6 @@ var pagingSlider = {
      * @var boolean
      */
     _disabled : false,
-        
 
     /**
      * Global - holds count of elements to overjump due to 
@@ -41,7 +39,7 @@ var pagingSlider = {
     
     /** ################## class methods ################## **/
     
-        
+    
     /**
      * Sliding a single page to another
      * 
@@ -113,13 +111,6 @@ var pagingSlider = {
      */
     switchToPage: function(sliderPageContainer, pageId)
     {
-        //check if _disabled -> swipe is _disabled while animation swipe
-        if(pagingSlider._disabled === true){
-            return;
-        }
-        
-        //disable swiping
-        pagingSlider._disabled = true;
         
         //Init vars
         var pages = sliderPageContainer.find('.page');
@@ -127,6 +118,14 @@ var pagingSlider = {
         var maxPageIndex = parseInt(pages.length-1);
         var sickDif = (maxPageIndex-parseInt(currentPage.attr('page')));
         var watchDiv = (maxPageIndex+1) -(parseInt(currentPage.attr('page')));
+        
+        //check if _disabled -> swipe is _disabled while animation swipe, also return if the current page is clicked
+        if(pagingSlider._disabled === true && currentPage.attr('page') === pageId){
+            return;
+        }
+        
+        //disable swiping
+        pagingSlider._disabled = true;
         
         
         if(parseInt(pageId) > parseInt(currentPage.attr('page'))){
