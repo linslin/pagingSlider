@@ -100,4 +100,11 @@ retrieve individual pages and sliden from one side to another.
 ![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen1.png)
 ![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen2.png)
 
+
+## Tested with
+
+ - cordova 3.3
+ - Android 4.1<
+ - iOS 6.0<
+
 ## Thanks to Christophe Coenraets
