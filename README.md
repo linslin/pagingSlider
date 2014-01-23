@@ -7,6 +7,16 @@ Inspired by http://coenraets.org/blog/2013/03/hardware-accelerated-page-transiti
 I have written an extension. This extension allows the page slider to control several pages away, 
 retrieve individual pages and sliden from one side to another.
 
+
+## Features
+
+- slide to pages with touch swipes
+- auto switch to pages by clicking menu item
+- call pages directly
+- animated mobile pagebrowser
+- integrated touch events with quoJS
+- (soon) multi sliders on one page support
+
 ![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen3.png)
 
 ## Useage
@@ -84,14 +94,6 @@ retrieve individual pages and sliden from one side to another.
 </html>
 ```
 
-
-## Features
-
-- slide to pages with touch swipes
-- auto switch to pages by clicking menu item
-- call pages directly
-- animated mobile pagebrowser
-- integrated touch events with quoJS
 
 
 ## Screenshots
