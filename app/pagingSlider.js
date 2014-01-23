@@ -54,7 +54,7 @@ var pagingSlider = {
      * @param string sliderPageContainer
      * @param string from
      */
-    From: function(sliderPageContainer, from)
+    slidePageFrom: function(sliderPageContainer, from)
     {
         
         //Init function var
@@ -191,7 +191,7 @@ var pagingSlider = {
             $(e).next('.page').attr('class', "page current left");
             $(e).next('.page').attr('class', "page current transition center");
             $(e).attr('class', "page transition left");
-            pagingSlider.currentPage = $(e).next('.page').first();     //set element as current global
+            pagingSlider._currentPage = $(e).next('.page').first();     //set element as current global
             
         }else if(pagingSlider._pageCount < sickVar  && i-1 < (maxPageIndex-pageId) && direction === 'left'){
             
@@ -201,12 +201,12 @@ var pagingSlider = {
             $(e).prev('.page').attr('class', "page current right");
             $(e).prev('.page').attr('class', "page current transition center");
             $(e).attr('class', "page transition right"); //set element as current global
-            pagingSlider.currentPage = $(e).prev('.page').first();    
+            pagingSlider._currentPage = $(e).prev('.page').first();    
         }
         
         //setup current page pointer //@Todo slidePage could be lines with nice selector and without a loop.. later
         $('.footer-menu .pager li').each(function(i, e){
-            if(i+1 === parseInt($(pagingSlider.currentPage).attr('page'))){
+            if(i+1 === parseInt($(pagingSlider._currentPage).attr('page'))){
                 $(e).removeClass('inactive');
                 $(e).addClass('active');
             }else{
@@ -249,7 +249,7 @@ var pagingSlider = {
         });
 
         //setup current page
-        pagingSlider.currentPage = pages.get(pageId-1);  
+        pagingSlider._currentPage = pages.get(pageId-1);  
         
         //setup page browser
         pagingSlider._updatePagePointer($(sliderPageContainer), pageId);
