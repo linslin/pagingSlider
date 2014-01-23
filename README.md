@@ -1,12 +1,13 @@
 # pagingSlider
 =======================
 
-![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen3.png)
 
 ## Notice
 Inspired by http://coenraets.org/blog/2013/03/hardware-accelerated-page-transitions-for-mobile-web-apps-phonegap-apps/ 
 I have written an extension. This extension allows the page slider to control several pages away, 
 retrieve individual pages and sliden from one side to another.
+
+![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen3.png)
 
 ## Useage
  - Checkout and run app/index.html in Browser.
