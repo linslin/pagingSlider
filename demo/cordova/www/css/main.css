@@ -18,7 +18,7 @@ h4 {margin: 35px 0 0 0; }
 #wrapper { width:500px; height:500px; border:1px solid #cecece; margin: 0 auto; background: #dedede; }
 
 /* pageSlider content */
-.slidepage-container { height:370px; position:relative; overflow: hidden;  background:#cecece;  }
+.slidepage-container { height:330px; position:relative; overflow: hidden;  background:#cecece;  }
 .slidepage-container .content { padding:15px;}
 
 /** Page footer menu **/
