@@ -100,7 +100,7 @@ var pagingSlider = {
      * Switch to a specific page
      * 
      * @param object sliderPageContainer jquery object of 
-     * @param integer pageId pageId as string
+     * @param string pageId pageId as string
      */
     switchToPage: function(sliderPageContainer, pageId)
     {
@@ -113,7 +113,7 @@ var pagingSlider = {
         var watchDiv = (maxPageIndex+1) -(parseInt(currentPage.attr('page')));
         
         //check if _disabled -> swipe is _disabled while animation swipe, also return if the current page is clicked
-        if(pagingSlider._disabled === true && parseInt(currentPage.attr('page')) === pageId){
+        if(pagingSlider._disabled === true && currentPage.attr('page') === pageId){
             return;
         }
         
@@ -121,7 +121,7 @@ var pagingSlider = {
         pagingSlider._disabled = true;
         
         
-        if(pageId > parseInt(currentPage.attr('page'))){
+        if(parseInt(pageId) > parseInt(currentPage.attr('page'))){
             
             pages.each(function(i, e){
                 if( i+1 >= parseInt(currentPage.attr('page'))){
@@ -129,7 +129,7 @@ var pagingSlider = {
                         pagingSlider.switchIt(e, i, pageId, 'right', null, sliderPageContainer, currentPage);
                         
                         //done
-                        if(i+1 === pageId) {
+                        if(i+1 === parseInt(pageId)) {
                             pagingSlider._disabled = false; //enable swiping after page swipes are done
                         }
                         
@@ -137,7 +137,7 @@ var pagingSlider = {
                 } 
             });
             
-        }else if (pageId < parseInt(currentPage.attr('page'))) {
+        }else if (parseInt(pageId) < parseInt(currentPage.attr('page'))) {
             
             if(parseInt(currentPage.attr('page')) !== (maxPageIndex+1)){
                 rightDif = sickDif;
@@ -155,11 +155,14 @@ var pagingSlider = {
                         pagingSlider.switchIt(pages[(maxPageIndex-(i)-(watchDiv))], i, pageId, 'left', maxPageIndex, sliderPageContainer, currentPage);
                         
                         //done
-                        if(i === currentPage.attr('page') - pageId) {
+                        if(i === currentPage.attr('page') - parseInt(pageId)) {
                             pagingSlider._disabled = false; //enable swiping after page swipes are done
                         }
+                        
                     }, (300*((i))));
                 }
+                
+
             });
         }
         
@@ -173,7 +176,7 @@ var pagingSlider = {
      * 
      * @param object e
      * @param interger i
-     * @param integer pageId
+     * @param string pageId
      * @param string direction
      * @param integer maxPageIndex
      * @param object sliderPageContainer
@@ -183,7 +186,7 @@ var pagingSlider = {
     {
         
         var currentPageId = parseInt($(currentPage).attr('page'));
-        var sickVar = (currentPageId-pageId);
+        var sickVar = (currentPageId-parseInt(pageId));
         
         if(i+1 < pageId && direction === 'right'){
             
@@ -192,7 +195,7 @@ var pagingSlider = {
             $(e).attr('class', "page transition left");
             pagingSlider.currentPage = $(e).next('.page').first();     //set element as current global
             
-        }else if(pagingSlider._pageCount < sickVar  && i-1 < (maxPageIndex-pageId) && direction === 'left'){
+        }else if(pagingSlider._pageCount < sickVar  && i-1 < (maxPageIndex-parseInt(pageId)) && direction === 'left'){
             
             //count up if direction "left"
             pagingSlider._pageCount++;
@@ -205,7 +208,7 @@ var pagingSlider = {
         
         //setup current page pointer //@Todo this could be lines with nice selector and without a loop.. later
         $('.footer-menu .pager li').each(function(i, e){
-            if(i+1 === parseInt($(pagingSlider.currentPage).attr('page'))){
+            if(i+1 === parseInt(pagingSlider.currentPage.attr('page'))){
                 $(e).removeClass('inactive');
                 $(e).addClass('active');
             }else{
@@ -238,14 +241,11 @@ var pagingSlider = {
         	if(i+1 < pageId) { // all pages before next current
         		$(e).attr('class', 'page left');
         	} else if (i+1 === pageId) { // current page item to set
-        		$(e).attr('class', 'page current transition center');
+        		$(e).attr('class', 'page current');
         	} else if (i+1 > pageId) {  // all pages after next current
         		$(e).attr('class', 'page right');
         	}
         });
-
-        //setup current page
-        pagingSlider.currentPage = pages.get(pageId-1);  
         
         //setup page browser
         sliderPageContainer.next('.footer-menu').find('.pager li.active').removeClass('active').addClass('inactive');
