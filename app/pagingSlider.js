@@ -9,7 +9,9 @@
  * @version   0.2
  * @link      https://github.com/linslin
  * 
- * @todo remove class page binder from init, currentPage can be set on any run
+ * @todo page ids removen um löschunen von divs zu erlauben
+ * @todo add loop wenn letztes element erreicht/infity scroller
+ * @todo footer div variabel machen
  *
  */
 
@@ -153,10 +155,9 @@ var pagingSlider = {
                     }, (300*((i))));
                 }
             });
+        } else {
+            this._disabled = false;
         }
-        
-        
-        
     },
 
 
