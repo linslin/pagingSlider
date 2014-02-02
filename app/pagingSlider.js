@@ -11,7 +11,6 @@
  * 
  * @todo page ids removen um löschunen von divs zu erlauben
  * @todo add loop wenn letztes element erreicht/infity scroller
- * @todo footer div konfigurierbar machen für position und ein-/ausschalten
  *
  */
 
@@ -30,12 +29,15 @@ var pagingSlider = {
     _disabled : false,
 
     /**
-     * Global - holds count of elements to overjump due to 
-     * page slider slideToPage left direction
+     * private - holds count of elements
      * @var integer
      */
     _pageCount : 0,
 
+    /**
+     * pubic - true|false to disable or enable page pointer menu.
+     */
+    disablePagePointer: false,
     
     
     /** ################## class methods ################## **/
@@ -196,13 +198,16 @@ var pagingSlider = {
         }
         
         //setup current page pointer //@Todo slidePage could be lines with nice selector and without a loop.. later
-        $('.footer-menu .pager li').each(function(i, e){
-            if(i+1 === parseInt($(pagingSlider._currentPage).attr('page'))){
-                $(e).addClass('active');
-            }else{
-                $(e).removeClass('active');
-            }
-        });
+    	if (!this.disablePagePointer) {
+            $('.footer-menu .pager li').each(function(i, e){
+                if(i+1 === parseInt($(pagingSlider._currentPage).attr('page'))){
+                    $(e).addClass('active');
+                }else{
+                    $(e).removeClass('active');
+                }
+            }); 		
+    	}
+
     },
     
     
@@ -249,9 +254,15 @@ var pagingSlider = {
      * 
      * @param object sliderPageContainer jquery object 
      * @param integer pageId pageId as string
+     * 
+     * @return boolean
      */
     _updatePagePointer: function(sliderPageContainer, pageId)
     {
+    	if (this.disablePagePointer) {
+    		return false;
+    	}
+    	
         sliderPageContainer.next('.footer-menu').find('.pager li.active').removeClass('active');
         $(sliderPageContainer.next('.footer-menu').find('.pager li').get(pageId-1)).addClass('active');
     },
