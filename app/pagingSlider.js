@@ -12,7 +12,6 @@
  * @todo page ids removen um löschunen von divs zu erlauben
  * @todo add loop wenn letztes element erreicht/infity scroller
  * @todo footer div konfigurierbar machen für position und ein-/ausschalten
- * @todo remove inactive class, no class will be "default" for pageItemPointers
  *
  */
 
@@ -199,12 +198,9 @@ var pagingSlider = {
         //setup current page pointer //@Todo slidePage could be lines with nice selector and without a loop.. later
         $('.footer-menu .pager li').each(function(i, e){
             if(i+1 === parseInt($(pagingSlider._currentPage).attr('page'))){
-                $(e).removeClass('inactive');
                 $(e).addClass('active');
             }else{
                 $(e).removeClass('active');
-                $(e).removeClass('inactive');
-                $(e).addClass('inactive');
             }
         });
     },
@@ -256,8 +252,8 @@ var pagingSlider = {
      */
     _updatePagePointer: function(sliderPageContainer, pageId)
     {
-        sliderPageContainer.next('.footer-menu').find('.pager li.active').removeClass('active').addClass('inactive');
-        $(sliderPageContainer.next('.footer-menu').find('.pager li').get(pageId-1)).removeClass('inactive').addClass('active');
+        sliderPageContainer.next('.footer-menu').find('.pager li.active').removeClass('active');
+        $(sliderPageContainer.next('.footer-menu').find('.pager li').get(pageId-1)).addClass('active');
     },
     
     
