@@ -8,21 +8,23 @@ I have written an extension. This extension allows the page slider to control se
 retrieve individual pages and slide from one side to another.
 
 
-## Features
+## Release 0.3 - Features
 
 - slide to pages with touch swipes
 - auto switch to pages by clicking menu item
 - call pages directly
 - animated mobile pagebrowser
 - integrated touch events with quoJS
-- (soon) multi sliders on one page support
+- loop functionality
+- disable/enable pointer foot menu
+- multi sliders on one page support
 
 ![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen3.png)
 
 ## Useage
  - Checkout and run app/index.html in Browser.
  - Modify the Template
- - Take a look at the demo directory for cordova examples
+ - Take a look at the demo directory for cordova examples & configurations
  
 ```html
 <html>
@@ -59,9 +61,9 @@ retrieve individual pages and slide from one side to another.
         <div class="footer-menu">
             <ul class="pager clearfix">
                 <li class="active"></li>
-                <li class="inactive"></li>
-                <li class="inactive"></li>
-                <li class="inactive"></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>
         </div>
     </div>   
@@ -94,7 +96,21 @@ retrieve individual pages and slide from one side to another.
 </html>
 ```
 
+## Configurations
 
+### Disable/Enable loop 
+```html
+<script type="text/javascript">
+        pagingSlider.loop = false; //default is true
+</script>
+```
+
+### Disable/Enable pointer footer menu 
+```html
+<script type="text/javascript">
+        pagingSlider.disablePagePointer = true; //default is false
+</script>
+```
 
 ## Screenshots
 
@@ -107,5 +123,8 @@ retrieve individual pages and slide from one side to another.
  - cordova 3.3
  - Android 4.1<
  - iOS 6.0<
+ 
+## Known Issues
+  - Old Android Versions - Swipe does not work due quoJS/zepto.js. Fix -> "https://github.com/madrobby/zepto/issues/315"
 
 ## Thanks to Christophe Coenraets
