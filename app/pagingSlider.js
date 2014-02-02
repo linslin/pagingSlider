@@ -12,6 +12,7 @@
  * @todo page ids removen um löschunen von divs zu erlauben
  * @todo add loop wenn letztes element erreicht/infity scroller
  * @todo footer div konfigurierbar machen für position und ein-/ausschalten
+ * @todo remove inactive class, no class will be "default" for pageItemPointers
  *
  */
 
