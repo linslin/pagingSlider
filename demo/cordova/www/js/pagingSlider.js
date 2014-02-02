@@ -6,10 +6,9 @@
  * @author    Nils Gajsek <nils.gajsek@glanzkinder.com>
  * @copyright 2013-2014 Nils Gajsek <nils.gajsek@glanzkinder.com>
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
- * @version   0.2
+ * @version   0.3
  * @link      https://github.com/linslin
  * 
- * @todo remove class page binder from init, currentPage can be set on any run
  *
  */
 
@@ -28,12 +27,21 @@ var pagingSlider = {
     _disabled : false,
 
     /**
-     * Global - holds count of elements to overjump due to 
-     * page slider slideToPage left direction
+     * private - holds count of elements
      * @var integer
      */
     _pageCount : 0,
 
+    /**
+     * pubic - true|false to disable or enable page pointer menu.
+     * @var boolean
+     */
+    disablePagePointer: false,
+
+    /**
+     * pubic - true|false to disable or enable page loop.
+     */
+    loop: true,
     
     
     /** ################## class methods ################## **/
@@ -50,6 +58,7 @@ var pagingSlider = {
         
         //Init function var
         var direction = '';
+    	var pages = $(sliderPageContainer).find('.page');
         
         //set current page
         this._updateCurrentPage(sliderPageContainer);
@@ -74,7 +83,7 @@ var pagingSlider = {
        
         
         if(page.length > 0){
-            
+
             //switch css classes
             $(page).attr('class', "page current" + from); // Position the page at the starting position of the animation
             $(page).attr('class', "page current transition center");  // Position the new page and the current page at the ending position of their animation with a transition class indicating the duration of the animation
@@ -85,6 +94,8 @@ var pagingSlider = {
             
             //setup page browser
             this._updatePagePointer($(sliderPageContainer), parseInt(page.attr('page')));
+        } else if (pages.length === parseInt(this._currentPage.attr('page')) && this.loop) { //swipe to first if last page & loop is true
+        	this.setPage(sliderPageContainer, 1);
         }
     },
     
@@ -153,10 +164,9 @@ var pagingSlider = {
                     }, (300*((i))));
                 }
             });
+        } else {
+            this._disabled = false;
         }
-        
-        
-        
     },
 
 
@@ -195,16 +205,16 @@ var pagingSlider = {
         }
         
         //setup current page pointer //@Todo slidePage could be lines with nice selector and without a loop.. later
-        $('.footer-menu .pager li').each(function(i, e){
-            if(i+1 === parseInt($(pagingSlider._currentPage).attr('page'))){
-                $(e).removeClass('inactive');
-                $(e).addClass('active');
-            }else{
-                $(e).removeClass('active');
-                $(e).removeClass('inactive');
-                $(e).addClass('inactive');
-            }
-        });
+    	if (!this.disablePagePointer) {
+            $('.footer-menu .pager li').each(function(i, e){
+                if(i+1 === parseInt($(pagingSlider._currentPage).attr('page'))){
+                    $(e).addClass('active');
+                }else{
+                    $(e).removeClass('active');
+                }
+            }); 		
+    	}
+
     },
     
     
@@ -251,11 +261,17 @@ var pagingSlider = {
      * 
      * @param object sliderPageContainer jquery object 
      * @param integer pageId pageId as string
+     * 
+     * @return boolean
      */
     _updatePagePointer: function(sliderPageContainer, pageId)
     {
-        sliderPageContainer.next('.footer-menu').find('.pager li.active').removeClass('active').addClass('inactive');
-        $(sliderPageContainer.next('.footer-menu').find('.pager li').get(pageId-1)).removeClass('inactive').addClass('active');
+    	if (this.disablePagePointer) {
+    		return false;
+    	}
+    	
+        sliderPageContainer.next('.footer-menu').find('.pager li.active').removeClass('active');
+        $(sliderPageContainer.next('.footer-menu').find('.pager li').get(pageId-1)).addClass('active');
     },
     
     
