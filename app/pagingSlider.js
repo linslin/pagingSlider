@@ -9,8 +9,7 @@
  * @version   0.2
  * @link      https://github.com/linslin
  * 
- * @todo page ids removen um löschunen von divs zu erlauben
- * @todo add loop wenn letztes element erreicht/infity scroller
+ * @todo fetch dom update like "delete a page".
  *
  */
 
@@ -36,8 +35,14 @@ var pagingSlider = {
 
     /**
      * pubic - true|false to disable or enable page pointer menu.
+     * @var boolean
      */
     disablePagePointer: false,
+
+    /**
+     * pubic - true|false to disable or enable page loop.
+     */
+    loop: true,
     
     
     /** ################## class methods ################## **/
@@ -54,6 +59,7 @@ var pagingSlider = {
         
         //Init function var
         var direction = '';
+    	var pages = $(sliderPageContainer).find('.page');
         
         //set current page
         this._updateCurrentPage(sliderPageContainer);
@@ -78,7 +84,7 @@ var pagingSlider = {
        
         
         if(page.length > 0){
-            
+
             //switch css classes
             $(page).attr('class', "page current" + from); // Position the page at the starting position of the animation
             $(page).attr('class', "page current transition center");  // Position the new page and the current page at the ending position of their animation with a transition class indicating the duration of the animation
@@ -89,6 +95,8 @@ var pagingSlider = {
             
             //setup page browser
             this._updatePagePointer($(sliderPageContainer), parseInt(page.attr('page')));
+        } else if (pages.length === parseInt(this._currentPage.attr('page')) && this.loop) { //swipe to first if last page & loop is true
+        	this.setPage(sliderPageContainer, 1);
         }
     },
     
