@@ -9,6 +9,7 @@
  * @version   0.3
  * @link      https://github.com/linslin
  * 
+ * @todo Add dom refresh option for use cases like "pageDelete" or "pageAdded" or "reordert".
  *
  */
 
