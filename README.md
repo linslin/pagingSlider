@@ -7,6 +7,10 @@ Inspired by http://coenraets.org/blog/2013/03/hardware-accelerated-page-transiti
 I have written an extension. This extension allows the page slider to control several pages, 
 retrieve individual pages and slide from one side to another.
 
+###### Why singleton pattern? 
+Using singleton pattern as class object makes the integration easy in the common way. Also singleton pattern does not
+block a multiple use per page. You are able to copy the pagingSlider object like "var myPagingSlider = pagingSlider;".
+
 
 ## Release 0.3 - Features
 
