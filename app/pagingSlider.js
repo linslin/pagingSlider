@@ -10,11 +10,14 @@
  * @link      https://github.com/linslin
  * 
  * @todo Add dom refresh option for use cases like "pageDelete" or "pageAdded" or "reordert".
+ * @todo Backward looping
  *
  */
 
 var pagingSlider = {    
-    
+
+	/** ################## class vars ################## **/
+		
     /**
      * private - Current page slider page as object
      * @var object
@@ -41,6 +44,7 @@ var pagingSlider = {
 
     /**
      * pubic - true|false to disable or enable page loop.
+     * @var boolean
      */
     loop: true,
     

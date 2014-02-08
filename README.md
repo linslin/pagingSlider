@@ -1,20 +1,20 @@
 # pagingSlider
 =======================
 
-
-## Notice
+## What is it?
+pagingSilder brings you Hardware-Accelerated Page Transitions for Web / Mobile Web Apps / PhoneGap Apps.
 Inspired by http://coenraets.org/blog/2013/03/hardware-accelerated-page-transitions-for-mobile-web-apps-phonegap-apps/ 
 I have written an extension. This extension allows the page slider to control several pages, 
 retrieve individual pages and slide from one side to another.
 
 ###### Why singleton pattern? 
 Using singleton pattern as class object makes the integration easy in the common way. Also singleton pattern does not
-block a multiple use per page. You are able to copy the pagingSlider object like "var myPagingSlider = pagingSlider;".
+block a multiple use per page. You are able to create new instances of pagingSlider object like "var myPagingSlider = pagingSlider;".
 
 
 ## Release 0.3 - Features
 
-- slide to pages with touch swipes
+- slide to pages with touch swipes by using Hardware-Accelerated Page Transitions
 - auto switch to pages by clicking menu item
 - call pages directly
 - animated mobile pagebrowser
