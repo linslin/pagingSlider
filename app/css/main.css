@@ -17,10 +17,6 @@ h1, h2 { margin:0; }
 h4 {margin: 35px 0 0 0; }
 #wrapper { width:500px; height:500px; border:1px solid #cecece; margin: 0 auto; background: #dedede; }
 
-/* pageSlider content */
-.slidepage-container { height:330px; position:relative; overflow: hidden;  background:#cecece;  }
-.slidepage-container .content { padding:15px;}
-
 /** Page footer menu **/
 .footer-menu ul { }
 .footer-menu ul.pager { height:19px; text-align:center; }
@@ -31,10 +27,14 @@ h4 {margin: 35px 0 0 0; }
 /** Header menu */
 .header-menu { margin:0 auto; }
 
+
 /** 
  * pagingSlider - CSS 
  * Following lines are required for animations, etc.
  */
+.slidepage-container { height:330px; position:relative; overflow: hidden;  background:#cecece;  } /* pageSlider container setup */
+.slidepage-container .content { padding:15px;} /* edit ;) */
+
 .page { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 .page.left { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); }
 .page.center { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }

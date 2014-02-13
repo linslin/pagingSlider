@@ -11,6 +11,7 @@
  * 
  * @todo Add dom refresh option for use cases like "pageDelete" or "pageAdded" or "reordert".
  * @todo Backward looping
+ * @todo make footer pointer menu position dyn. to dom by adding slider class name
  *
  */
 
