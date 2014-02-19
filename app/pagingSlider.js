@@ -12,6 +12,8 @@
  * @todo Add dom refresh option for use cases like "pageDelete" or "pageAdded" or "reordert".
  * @todo Backward looping
  * @todo make footer pointer menu position dyn. to dom by adding slider class name
+ * @todo evaluate "clearfix" class in submenu 
+ * @todo rename "page-class" into unique name
  *
  */
 
@@ -212,7 +214,7 @@ var pagingSlider = {
         
         //setup current page pointer //@Todo slidePage could be lines with nice selector and without a loop.. later
     	if (!this.disablePagePointer) {
-            $('.footer-menu .pager li').each(function(i, e){
+    		$(currentPage).parents('.slidepage-container').first().next('.footer-menu').find('.pager li').each(function(i, e){
                 if(i+1 === parseInt($(pagingSlider._currentPage).attr('page'))){
                     $(e).addClass('active');
                 }else{
