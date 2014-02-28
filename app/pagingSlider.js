@@ -154,11 +154,11 @@ var pagingSlider = {
                 rightDif = sickDif;
             }            
             
-            //RESET clogbal count
+            //RESET global count
             this._pageCount = 0;
             
             pages.each(function(i, e){
-                // aktuelle id - neue id = IIIIII!!!
+                // current id - new id
                 if(i < parseInt(currentPage.attr('page'))){
                     setTimeout(function() {
                         pagingSlider.switchIt(pages[(maxPageIndex-(i)-(watchDiv))], i, pageId, 'left', maxPageIndex, currentPage, sliderPageContainer);
