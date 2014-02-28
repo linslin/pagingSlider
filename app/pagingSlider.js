@@ -10,8 +10,7 @@
  * @link      https://github.com/linslin
  * 
  * @todo Add dom refresh option for use cases like "pageDelete" or "pageAdded" or "reordert".
- * @todo Backward looping
- * @todo make footer pointer menu position dyn. to dom by adding slider class name
+ * @todo make footer pointer menu position dyn. to dom by adding slider class name -> DONE
  * @todo evaluate "clearfix" class in submenu 
  * @todo rename "page-class" into unique name
  * @todo remove "padding" from slider wrapper or move it into content css class
@@ -105,6 +104,8 @@ var pagingSlider = {
             this._updatePagePointer(sliderPageContainer, parseInt(page.attr('page')));
         } else if (pages.length === parseInt(this._currentPage.attr('page')) && this.loop) { //swipe to first if last page & loop is true
         	this.setPage(sliderPageContainer, 1);
+        } else if (1 === parseInt(this._currentPage.attr('page')) && this.loop) { //swipe to first if last page & loop is true
+        	this.setPage(sliderPageContainer, pages.length);
         }
     },
     
