@@ -6,14 +6,10 @@
  * @author    Nils Gajsek <nils.gajsek@glanzkinder.com>
  * @copyright 2013-2014 Nils Gajsek <nils.gajsek@glanzkinder.com>
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
- * @version   0.3
+ * @version   0.4
  * @link      https://github.com/linslin
  * 
- * @todo Add dom refresh option for use cases like "pageDelete" or "pageAdded" or "reordert".
- * @todo make footer pointer menu position dyn. to dom by adding slider class name -> DONE
- * @todo evaluate "clearfix" class in submenu 
- * @todo rename "page-class" into unique name
- * @todo remove "padding" from slider wrapper or move it into content css class
+ * @todo evaluate "clearfix" class in submenu
  *
  */
 
@@ -66,7 +62,7 @@ var pagingSlider = {
         
         //Init function var
         var direction = '';
-    	var pages = $(sliderPageContainer).find('.page');
+    	var pages = $(sliderPageContainer).find('.psPage');
         
         //set current page
         this._updateCurrentPage(sliderPageContainer);
@@ -80,12 +76,12 @@ var pagingSlider = {
         switch(from){
             case 'left':
                 direction = 'right';
-                page = $(sliderPageContainer + ' .page.current').prev().first();
+                page = $(sliderPageContainer + ' .psPage.current').prev().first();
             break;
             
             case 'right':
                 direction = 'left';
-                page = $(sliderPageContainer + ' .page.current').next().first();
+                page = $(sliderPageContainer + ' .psPage.current').next().first();
             break;
         }
        
@@ -93,9 +89,9 @@ var pagingSlider = {
         if(page.length > 0){
 
             //switch css classes
-            $(page).attr('class', "page current" + from); // Position the page at the starting position of the animation
-            $(page).attr('class', "page current transition center");  // Position the new page and the current page at the ending position of their animation with a transition class indicating the duration of the animation
-            $(this._currentPage).attr('class', "page transition " + direction);
+            $(page).attr('class', "psPage current" + from); // Position the page at the starting position of the animation
+            $(page).attr('class', "psPage current transition center");  // Position the new page and the current page at the ending position of their animation with a transition class indicating the duration of the animation
+            $(this._currentPage).attr('class', "psPage transition " + direction);
             
             //setup current page
             this._currentPage = page;   
@@ -120,7 +116,7 @@ var pagingSlider = {
     {
         
         //Init vars
-        var pages = $(sliderPageContainer).find('.page');
+        var pages = $(sliderPageContainer).find('.psPage');
         var currentPage =  $(sliderPageContainer).find(".current");
         var maxPageIndex = parseInt(pages.length-1);
         var sickDif = (maxPageIndex-parseInt(currentPage.attr('page')));
@@ -193,26 +189,25 @@ var pagingSlider = {
      */
     switchIt: function(e, i, pageId, direction, maxPageIndex, currentPage, sliderPageContainer)
     {
-        console.log(sliderPageContainer);
         var currentPageId = parseInt($(currentPage).attr('page'));
         var sickVar = (currentPageId-pageId);
         
         if(i+1 < pageId && direction === 'right'){
             
-            $(e).next('.page').attr('class', "page current left");
-            $(e).next('.page').attr('class', "page current transition center");
-            $(e).attr('class', "page transition left");
-            this._currentPage = $(e).next('.page').first();     //set element as current global
+            $(e).next('.psPage').attr('class', "psPage current left");
+            $(e).next('.psPage').attr('class', "psPage current transition center");
+            $(e).attr('class', "psPage transition left");
+            this._currentPage = $(e).next('.psPage').first();     //set element as current global
             
         }else if(pagingSlider._pageCount < sickVar  && i-1 < (maxPageIndex-pageId) && direction === 'left'){
             
             //count up if direction "left"
             pagingSlider._pageCount++;
             
-            $(e).prev('.page').attr('class', "page current right");
-            $(e).prev('.page').attr('class', "page current transition center");
-            $(e).attr('class', "page transition right"); //set element as current global
-            this._currentPage = $(e).prev('.page').first();    
+            $(e).prev('.psPage').attr('class', "psPage current right");
+            $(e).prev('.psPage').attr('class', "psPage current transition center");
+            $(e).attr('class', "psPage transition right"); //set element as current global
+            this._currentPage = $(e).prev('.psPage').first();    
         }
         
         //setup current page pointer //@Todo slidePage could be lines with nice selector and without a loop.. later
@@ -238,7 +233,7 @@ var pagingSlider = {
     {
     	
     	//Init
-        var pages = $(sliderPageContainer).find('.page');
+        var pages = $(sliderPageContainer).find('.psPage');
 
         //check if disabled -> swipe is disabled while animation swipe
         if(this._disabled === true){
@@ -251,11 +246,11 @@ var pagingSlider = {
         //set page classes
         pages.each(function(i, e){
         	if(i+1 < pageId) { // all pages before next current
-        		$(e).attr('class', 'page left');
+        		$(e).attr('class', 'psPage left');
         	} else if (i+1 === pageId) { // current page item to set
-        		$(e).attr('class', 'page current transition center');
+        		$(e).attr('class', 'psPage current transition center');
         	} else if (i+1 > pageId) {  // all pages after next current
-        		$(e).attr('class', 'page right');
+        		$(e).attr('class', 'psPage right');
         	}
         });
 
@@ -292,6 +287,6 @@ var pagingSlider = {
      */
     _updateCurrentPage: function(sliderPageContainer)
     {
-    	this._currentPage =  $(sliderPageContainer + ' .page.current');
+    	this._currentPage =  $(sliderPageContainer + ' .psPage.current');
     }
 };

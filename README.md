@@ -11,8 +11,15 @@ retrieve individual pages and slide from one side to another.
 Using singleton pattern as class object makes the integration easy in the common way. Also singleton pattern does not
 block a multiple use per page. You are able to create new instances of pagingSlider object like "var myPagingSlider = pagingSlider;".
 
+## Release 0.4 - Changelog
 
-## Release 0.3 - Features
+- Made footer pointer position dynamic to HTML DOM position
+- Renamed "page" CSS class into "psPage" due to conflicts with intel framework
+- Made backward loop work
+- Some mini bugfixes
+
+
+## Features
 
 - slide to pages with touch swipes by using Hardware-Accelerated Page Transitions
 - auto switch to pages by clicking menu item
@@ -41,28 +48,28 @@ block a multiple use per page. You are able to create new instances of pagingSli
 <div id="wrapper">
     <div id="wrapper-inner">
         <div class="slidepage-container myPageContainerClass">
-            <div id="badges-slidepage-1" page="1" class="page center current">
+            <div id="badges-slidepage-1" page="1" class="psPage center current">
                 <div class="content">
                    <h2>Page 1</h2>
                 </div>
             </div>
-            <div id="badges-slidepage-2" page="2" class="page right">
+            <div id="badges-slidepage-2" page="2" class="psPage right">
                 <div class="content">
                    <h2>Page 2</h2>
                 </div>
             </div>
-            <div id="badges-slidepage-3" page="3" class="page right">
+            <div id="badges-slidepage-3" page="3" class="psPage right">
                 <div class="content">
                    <h2>Page 3</h2>
                 </div>
             </div>
-            <div id="badges-slidepage-4" page="4" class="page right">
+            <div id="badges-slidepage-4" page="4" class="psPage right">
                 <div class="content">
                    <h2>Page 4</h2>
                 </div>
             </div>
         </div>
-        <div class="footer-menu">
+        <div class="footer-menu myPageContainerClass">
             <ul class="pager clearfix">
                 <li class="active"></li>
                 <li></li>
