@@ -3,8 +3,8 @@
  *
  * @category  Mobile-Hybrid
  * @package   pagingSlider
- * @author    Nils Gajsek <nils.gajsek@glanzkinder.com>
- * @copyright 2013-2014 Nils Gajsek <nils.gajsek@glanzkinder.com>
+ * @author    Nils Gajsek <info@linslin.org>
+ * @copyright 2013-2014 Nils Gajsek <info@linslin.org>
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  * @version   0.4
  * @link      https://github.com/linslin
