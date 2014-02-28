@@ -14,6 +14,7 @@
  * @todo make footer pointer menu position dyn. to dom by adding slider class name
  * @todo evaluate "clearfix" class in submenu 
  * @todo rename "page-class" into unique name
+ * @todo remove "padding" from slider wrapper or move it into content css class
  *
  */
 
@@ -101,7 +102,7 @@ var pagingSlider = {
             this._currentPage = page;   
             
             //setup page browser
-            this._updatePagePointer($(sliderPageContainer), parseInt(page.attr('page')));
+            this._updatePagePointer(sliderPageContainer, parseInt(page.attr('page')));
         } else if (pages.length === parseInt(this._currentPage.attr('page')) && this.loop) { //swipe to first if last page & loop is true
         	this.setPage(sliderPageContainer, 1);
         }
@@ -137,7 +138,7 @@ var pagingSlider = {
             pages.each(function(i, e){
                 if( i+1 >= parseInt(currentPage.attr('page'))){
                     setTimeout(function() {
-                        pagingSlider.switchIt(e, i, pageId, 'right', null, currentPage);
+                        pagingSlider.switchIt(e, i, pageId, 'right', null, currentPage, sliderPageContainer);
                         
                         //done
                         if(i+1 === pageId) {
@@ -163,7 +164,7 @@ var pagingSlider = {
                 // aktuelle id - neue id = IIIIII!!!
                 if(i < parseInt(currentPage.attr('page'))){
                     setTimeout(function() {
-                        pagingSlider.switchIt(pages[(maxPageIndex-(i)-(watchDiv))], i, pageId, 'left', maxPageIndex, currentPage);
+                        pagingSlider.switchIt(pages[(maxPageIndex-(i)-(watchDiv))], i, pageId, 'left', maxPageIndex, currentPage, sliderPageContainer);
                         
                         //done
                         if(i === currentPage.attr('page') - pageId) {
@@ -187,10 +188,11 @@ var pagingSlider = {
      * @param string   direction
      * @param integer  maxPageIndex
      * @param object   currentPage
+     * @param string   sliderPageContainer
      */
-    switchIt: function(e, i, pageId, direction, maxPageIndex, currentPage)
+    switchIt: function(e, i, pageId, direction, maxPageIndex, currentPage, sliderPageContainer)
     {
-        
+        console.log(sliderPageContainer);
         var currentPageId = parseInt($(currentPage).attr('page'));
         var sickVar = (currentPageId-pageId);
         
@@ -214,7 +216,7 @@ var pagingSlider = {
         
         //setup current page pointer //@Todo slidePage could be lines with nice selector and without a loop.. later
     	if (!this.disablePagePointer) {
-    		$(currentPage).parents('.slidepage-container').first().next('.footer-menu').find('.pager li').each(function(i, e){
+    		$( '.footer-menu' + sliderPageContainer).find('.pager li').each(function(i, e){
                 if(i+1 === parseInt($(pagingSlider._currentPage).attr('page'))){
                     $(e).addClass('active');
                 }else{
@@ -260,7 +262,7 @@ var pagingSlider = {
         this._currentPage = pages.get(pageId-1);  
         
         //setup page browser
-        this._updatePagePointer($(sliderPageContainer), pageId);
+        this._updatePagePointer(sliderPageContainer, pageId);
     },
     
     
@@ -278,8 +280,8 @@ var pagingSlider = {
     		return false;
     	}
     	
-        sliderPageContainer.next('.footer-menu').find('.pager li.active').removeClass('active');
-        $(sliderPageContainer.next('.footer-menu').find('.pager li').get(pageId-1)).addClass('active');
+    	$('.footer-menu'+sliderPageContainer).find('.pager li.active').removeClass('active');
+        $($('.footer-menu'+sliderPageContainer).find('.pager li').get(pageId-1)).addClass('active');
     },
     
     
