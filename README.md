@@ -13,8 +13,8 @@ block a multiple use per page. You are able to create new instances of pagingSli
 
 ## Release 0.4 - Changelog
 
-- Removed "/app/ dir, added ilb dir as Library directory and moved web demo into "/demo/web". 
-- Made footer pointer position dynamic to HTML DOM position
+- Removed "/app/ dir, added "/lib" dir as library-directory and moved web-demo-directory into "/demo/web". 
+- Made footer pointer position dynamic to HTML DOM
 - Renamed "page" CSS class into "psPage" due to conflicts with intel framework
 - Made backward loop work
 - Removed "wrapper-inner" div from DOM
