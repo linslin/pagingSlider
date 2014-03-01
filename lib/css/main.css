@@ -6,37 +6,17 @@
  * @author    Nils Gajsek <nils.gajsek@glanzkinder.com>
  * @copyright 2013-2014 Nils Gajsek <nils.gajsek@glanzkinder.com>
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
- * @version   0.3
+ * @version   0.4
  * @link      https://github.com/linslin
  *
  */
-
-* { -webkit-user-select: none; }
-body {font-family:helvetica; }
-h1, h2 { margin:0; }
-h4 {margin: 35px 0 0 0; }
-#wrapper { height:500px; border:1px solid #cecece; margin: 0 auto; background: #dedede; }
-
-
-/** Page footer menu **/
-.footer-menu ul { }
-.footer-menu ul.pager { height:19px; text-align:center; }
-.footer-menu ul.pager li { height: 9px; width: 9px; display:inline-block; background: url(../img/icons/pager-point-inactive.svg) no-repeat center top;  }
-.footer-menu ul.pager li.first { margin-left:50%; }
-.footer-menu ul.pager li.active { background: url(../img/icons/pager-point-active.svg) no-repeat center top; }
-
-/** Header menu */
-.header-menu { margin:0 auto; }
 
 
 /** 
  * pagingSlider - CSS 
  * Following lines are required for animations, etc.
  */
-
-/* pageSlider content */
-.slidepage-container { height:330px; position:relative; overflow: hidden;  background:#cecece;  }
-.slidepage-container .content { padding:15px;}
+.slidepage-container { height:330px; position:relative; overflow: hidden;  background:#cecece;  } /* pageSlider container setup */
 
 .psPage { position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 .psPage.left { -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0); }

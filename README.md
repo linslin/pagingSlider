@@ -13,9 +13,11 @@ block a multiple use per page. You are able to create new instances of pagingSli
 
 ## Release 0.4 - Changelog
 
+- Removed "/app/ dir, added ilb dir as Library directory and moved web demo into "/demo/web". 
 - Made footer pointer position dynamic to HTML DOM position
 - Renamed "page" CSS class into "psPage" due to conflicts with intel framework
 - Made backward loop work
+- Removed "wrapper-inner" div from DOM
 - Some mini bugfixes
 
 
@@ -35,7 +37,7 @@ block a multiple use per page. You are able to create new instances of pagingSli
 ## Useage
  - Checkout and run app/index.html in Browser.
  - Modify the Template
- - Take a look at the demo directory for cordova examples & configurations
+ - Take a look at the demo directory for cordova-, web-examples & configurations
  
 ```html
 <html>
@@ -46,38 +48,36 @@ block a multiple use per page. You are able to create new instances of pagingSli
 <body>
 <h3>pagingSlider example</h3>
 <div id="wrapper">
-    <div id="wrapper-inner">
-        <div class="slidepage-container myPageContainerClass">
-            <div id="badges-slidepage-1" page="1" class="psPage center current">
-                <div class="content">
-                   <h2>Page 1</h2>
-                </div>
-            </div>
-            <div id="badges-slidepage-2" page="2" class="psPage right">
-                <div class="content">
-                   <h2>Page 2</h2>
-                </div>
-            </div>
-            <div id="badges-slidepage-3" page="3" class="psPage right">
-                <div class="content">
-                   <h2>Page 3</h2>
-                </div>
-            </div>
-            <div id="badges-slidepage-4" page="4" class="psPage right">
-                <div class="content">
-                   <h2>Page 4</h2>
-                </div>
+    <div class="slidepage-container myPageContainerClass">
+        <div id="badges-slidepage-1" page="1" class="psPage center current">
+            <div class="content">
+               <h2>Page 1</h2>
             </div>
         </div>
-        <div class="footer-menu myPageContainerClass">
-            <ul class="pager clearfix">
-                <li class="active"></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div id="badges-slidepage-2" page="2" class="psPage right">
+            <div class="content">
+               <h2>Page 2</h2>
+            </div>
         </div>
-    </div>   
+        <div id="badges-slidepage-3" page="3" class="psPage right">
+            <div class="content">
+               <h2>Page 3</h2>
+            </div>
+        </div>
+        <div id="badges-slidepage-4" page="4" class="psPage right">
+            <div class="content">
+               <h2>Page 4</h2>
+            </div>
+        </div>
+    </div>
+    <div class="footer-menu myPageContainerClass">
+        <ul class="pager clearfix">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div> 
     <h4>Page menu:</h4>
     <div class="header-menu clearfix">
         <a href="javascript:void(0);" onclick="pagingSlider.switchToPage('.myPageContainerClass', 1);">1</a>
@@ -94,11 +94,11 @@ block a multiple use per page. You are able to create new instances of pagingSli
 <script type="text/javascript" src="lib/fastclick.js"></script>
 <script type="text/javascript" src="pagingSlider.js"></script>
 <script type="text/javascript">
-    $$('#wrapper-inner').swipeLeft(function(){
+    $$('#wrapper').swipeLeft(function(){
         pagingSlider.slidePageFrom('.myPageContainerClass', 'right');
     });
     
-    $$('#wrapper-inner').swipeRight(function(){
+    $$('#wrapper').swipeRight(function(){
         pagingSlider.slidePageFrom('.myPageContainerClass', 'left');
     });
 </script>
@@ -131,7 +131,7 @@ block a multiple use per page. You are able to create new instances of pagingSli
 
 ## Tested with
 
- - cordova 3.3
+ - cordova 3.3, 3.4
  - Android 4.1<
  - iOS 6.0<
  

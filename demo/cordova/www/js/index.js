@@ -48,11 +48,11 @@ var app = {
          * pagingSlider binding
          */
         
-        $$('#wrapper-inner').swipeLeft(function(){
+        $$('#wrapper').swipeLeft(function(){
             pagingSlider.slidePageFrom(".myPageContainerClass", 'right');
         });
         
-        $$('#wrapper-inner').swipeRight(function(){
+        $$('#wrapper').swipeRight(function(){
             pagingSlider.slidePageFrom(".myPageContainerClass", 'left');
         });
         
@@ -60,9 +60,9 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+//        var parentElement = document.getElementById(id);
+//        var listeningElement = parentElement.querySelector('.listening');
+//        var receivedElement = parentElement.querySelector('.received');
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');

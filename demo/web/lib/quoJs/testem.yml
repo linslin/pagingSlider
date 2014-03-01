@@ -1,0 +1,13 @@
+framework: jasmine
+
+launch_in_dev:
+- PhantomJS
+# - Chrome
+# - Firefox
+# - Safari
+# - Opera
+# - PhantomJS
+
+src_files:
+- package/quo.js
+- build/spec/**/*.js
