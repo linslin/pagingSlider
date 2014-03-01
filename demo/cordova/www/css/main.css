@@ -15,7 +15,7 @@
 body {font-family:helvetica; }
 h1, h2 { margin:0; }
 h4 {margin: 35px 0 0 0; }
-#wrapper { height:500px; border:1px solid #cecece; margin: 0 auto; background: #dedede; }
+#wrapper { height:100%; border:1px solid #cecece; margin: 0 auto; background: #dedede; }
 
 
 /** Page footer menu **/
