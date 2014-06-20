@@ -11,7 +11,7 @@ retrieve individual pages and slide from one side to another.
 Using singleton pattern as class object makes the integration easy in the common way. Also singleton pattern does not
 block a multiple use per page. You are able to create new instances of pagingSlider object like "var myPagingSlider = pagingSlider;".
 
-## Release 0.4 - Changelog
+## Release 0.4b - Changelog
 
 - cordova 3.4 support
 - Removed "/app/ dir, added "/lib" dir as library-directory and moved web-demo-directory into "/demo/web". 
