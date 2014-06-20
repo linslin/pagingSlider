@@ -11,15 +11,9 @@ retrieve individual pages and slide from one side to another.
 Using singleton pattern as class object makes the integration easy in the common way. Also singleton pattern does not
 block a multiple use per page. You are able to create new instances of pagingSlider object like "var myPagingSlider = pagingSlider;".
 
-## Release 0.4b - Changelog
+## Release 0.5 - Changelog
 
-- cordova 3.4 support
-- Removed "/app/ dir, added "/lib" dir as library-directory and moved web-demo-directory into "/demo/web". 
-- Made footer pointer position dynamic to HTML DOM
-- Renamed "page" CSS class into "psPage" due to conflicts with intel framework
-- Made backward loop work
-- Removed "wrapper-inner" div from DOM
-- Some mini bugfixes
+- cordova 3.5 support (iOS / Android / blackberry / firefoxos)
 
 
 ## Features
@@ -132,9 +126,10 @@ block a multiple use per page. You are able to create new instances of pagingSli
 
 ## Tested with
 
- - cordova 3.3, 3.4
+ - cordova 3.3, 3.4, 3.5
  - Android 4.1<
  - iOS 6.0<
+ - Firefox OS 1.3
  
 ## Known Issues
   - Old Android Versions - Swipe does not work due quoJS/zepto.js. Fix -> "https://github.com/madrobby/zepto/issues/315"
