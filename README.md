@@ -7,11 +7,17 @@ Inspired by http://coenraets.org/blog/2013/03/hardware-accelerated-page-transiti
 I have written an extension. This extension allows the page slider to control several pages, 
 retrieve individual pages and slide from one side to another.
 
-###### Why singleton pattern? 
+##### Why singleton pattern? 
 Using singleton pattern as class object makes the integration easy in the common way. Also singleton pattern does not
 block a multiple use per page. You are able to create new instances of pagingSlider object like "var myPagingSlider = pagingSlider;".
 
-## Release 0.5 - Changelog
+### Release 1.0 - Changelog
+
+- official stable release
+- cordova 3.6 & 4.0 support (iOS / Android / blackberry / firefoxos / browser)
+- changed readme.md images paths. 
+
+### Release 0.5 - Changelog
 
 - cordova 3.5 support (iOS / Android / blackberry / firefoxos)
 
@@ -27,7 +33,7 @@ block a multiple use per page. You are able to create new instances of pagingSli
 - disable/enable pointer foot menu
 - multi sliders on one page support
 
-![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen3.png)
+![ScreenShot](https://raw.githubusercontent.com/linslin/pagingSlider/development/art/screen3.png)
 
 ## Useage
  - Checkout and run app/index.html in Browser.
@@ -120,13 +126,13 @@ block a multiple use per page. You are able to create new instances of pagingSli
 
 ## Screenshots
 
-![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen1.png)
-![ScreenShot](https://raw2.github.com/linslin/pagingSlider/master/art/screen2.png)
+![ScreenShot](https://raw.githubusercontent.com/linslin/pagingSlider/development/art/screen1.png)
+![ScreenShot](https://raw.githubusercontent.com/linslin/pagingSlider/development/art/screen2.png)
 
 
 ## Tested with
 
- - cordova 3.3, 3.4, 3.5
+ - cordova 3.3, 3.4, 3.5, 3.6, 4.0
  - Android 4.1<
  - iOS 6.0<
  - Firefox OS 1.3
