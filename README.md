@@ -18,7 +18,7 @@ block a multiple use per page. You are able to create new instances of pagingSli
 ### Release 1.0 - Changelog
 
 - official stable release
-- cordova 3.6 & 4.0 support (iOS / Android / blackberry / firefoxos / browser)
+- added cordova 3.6 & 4.0 support (iOS / Android / blackberry / firefoxos / browser)
 - changed readme.md images paths. 
 
 ### Release 0.5 - Changelog
