@@ -11,6 +11,10 @@ retrieve individual pages and slide from one side to another.
 Using singleton pattern as class object makes the integration easy in the common way. Also singleton pattern does not
 block a multiple use per page. You are able to create new instances of pagingSlider object like "var myPagingSlider = pagingSlider;".
 
+### Release 1.0.1 - Changelog
+
+- Added user css class support - https://github.com/linslin/pagingSlider/issues/4
+
 ### Release 1.0 - Changelog
 
 - official stable release
