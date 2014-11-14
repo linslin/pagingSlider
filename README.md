@@ -11,26 +11,32 @@ retrieve individual pages and slide from one side to another.
 Using singleton pattern as class object makes the integration easy in the common way. Also singleton pattern does not
 block a multiple use per page. You are able to create new instances of pagingSlider object like "var myPagingSlider = pagingSlider;".
 
-### Release 1.0.3 - Changelog
+
+#### Release 1.0.4 - Changelog
+
+- Hotfix: composer support.
+- README.md modifications.
+
+#### Release 1.0.3 - Changelog
 
 - Hotfix: composer support.
 
-### Release 1.0.2 - Changelog
+#### Release 1.0.2 - Changelog
 
 - Added composer support.
 - Added platform support (Windows Phone 8.0 & 8.1, amazon-fireos, tizen)
 
-### Release 1.0.1 - Changelog
+#### Release 1.0.1 - Changelog
 
 - Added user css class support - https://github.com/linslin/pagingSlider/issues/4
 
-### Release 1.0 - Changelog
+#### Release 1.0 - Changelog
 
 - Official stable release
 - Added cordova 3.6 & 4.0 support (iOS / Android / blackberry / firefoxos / browser)
 - Changed readme.md images paths. 
 
-### Release 0.5 - Changelog
+#### Release 0.5 - Changelog
 
 - cordova 3.5 support (iOS / Android / blackberry / firefoxos)
 
