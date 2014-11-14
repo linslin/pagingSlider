@@ -1,8 +1,7 @@
 {
     "name": "linslin/paging-slider",
     "description": "pagingSilder brings you Hardware-Accelerated Page Transitions for Web / Mobile Web Apps / PhoneGap Apps. Inspired by http://coenraets.org/blog/2013/03/hardware-accelerated-page-transitions-for-mobile-web-apps-phonegap-apps/ I have written an extension. This extension allows the page slider to control several pages, retrieve individual pages and slide from one side to another.",
-    "type": "page transition web",
-    "version" : "1.0.3",
+    "type": "web-page-transition",
     "keywords": ["page transition","pagingSlider", "cordova", "phonegap"],
     "license": "MIT",
     "authors": [
