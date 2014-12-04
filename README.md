@@ -61,6 +61,10 @@ http://linslin.org/pagingSlider/demo/
 
 ![ScreenShot](https://raw.githubusercontent.com/linslin/pagingSlider/development/art/screen3.png)
 
+## Install via bower
+
+	bower install linslin-pagingslider
+
 ## Useage
  - Checkout and run app/index.html in Browser.
  - Modify the Template
