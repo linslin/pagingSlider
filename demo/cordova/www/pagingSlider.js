@@ -6,7 +6,7 @@
  * @author    Nils Gajsek <info@linslin.org>
  * @copyright 2013-2014 Nils Gajsek <info@linslin.org>
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
- * @version   1.0.5
+ * @version   1.0.6
  * @link      https://github.com/linslin
  *
  *

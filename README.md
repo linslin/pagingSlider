@@ -14,6 +14,11 @@ block a multiple use per page. You are able to create new instances of pagingSli
 ### Demo
 http://linslin.org/pagingSlider/demo/
 
+#### Release 1.0.6 - Changelog
+
+- Added bower support
+- Added angularJS support
+
 #### Release 1.0.5 - Changelog
 
 - Added live demo
@@ -41,10 +46,6 @@ http://linslin.org/pagingSlider/demo/
 - Official stable release
 - Added cordova 3.6 & 4.0 support (iOS / Android / blackberry / firefoxos / browser)
 - Changed readme.md images paths. 
-
-#### Release 0.5 - Changelog
-
-- cordova 3.5 support (iOS / Android / blackberry / firefoxos)
 
 
 ## Features
@@ -158,6 +159,7 @@ http://linslin.org/pagingSlider/demo/
 ## Tested with
 
  - cordova 3.3, 3.4, 3.5, 3.6, 4.0
+ - angularJS
  - Android 4.1<
  - iOS 6.0<
  - Firefox OS 1.3
