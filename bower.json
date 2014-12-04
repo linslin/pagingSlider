@@ -1,0 +1,27 @@
+{
+  "name": "linslin-pagingSlider",
+  "version": "1.0.5",
+  "homepage": "https://github.com/linslin/pagingSlider",
+  "authors": [
+    "Nils Gajsek <nils.gajsek@glanzkinder.com>"
+  ],
+  "description": "pagingSilder brings you Hardware-Accelerated Page Transitions for Web / Mobile Web Apps / PhoneGap Apps.",
+  "main": "lib/pagingSlider.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "slider",
+    "pagingSlider",
+    "page",
+    "transition"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
