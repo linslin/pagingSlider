@@ -12,40 +12,7 @@ Using singleton pattern as class object makes the integration easy in the common
 block a multiple use per page. You are able to create new instances of pagingSlider object like "var myPagingSlider = pagingSlider;".
 
 ### Demo
-http://linslin.org/pagingSlider/demo/
-
-#### Release 1.0.6 - Changelog
-
-- Added bower support
-- Added angularJS support
-
-#### Release 1.0.5 - Changelog
-
-- Added live demo
-
-#### Release 1.0.4 - Changelog
-
-- Hotfix: composer support.
-- README.md modifications.
-
-#### Release 1.0.3 - Changelog
-
-- Hotfix: composer support.
-
-#### Release 1.0.2 - Changelog
-
-- Added composer support.
-- Added platform support (Windows Phone 8.0 & 8.1, amazon-fireos, tizen)
-
-#### Release 1.0.1 - Changelog
-
-- Added user css class support - https://github.com/linslin/pagingSlider/issues/4
-
-#### Release 1.0 - Changelog
-
-- Official stable release
-- Added cordova 3.6 & 4.0 support (iOS / Android / blackberry / firefoxos / browser)
-- Changed readme.md images paths. 
+http://www.linslin.org/2015/01/13/css-hardware-accelerated-page-transitions/
 
 
 ## Features
@@ -154,11 +121,6 @@ http://linslin.org/pagingSlider/demo/
 </script>
 ```
 
-## Screenshots
-
-![ScreenShot](https://raw.githubusercontent.com/linslin/pagingSlider/development/art/screen1.png)
-![ScreenShot](https://raw.githubusercontent.com/linslin/pagingSlider/development/art/screen2.png)
-
 
 ## Tested with
 
@@ -167,6 +129,47 @@ http://linslin.org/pagingSlider/demo/
  - Android 4.1<
  - iOS 6.0<
  - Firefox OS 1.3
+ 
+ 
+ 
+## Changelog
+
+#### Release 1.0.7 - Changelog
+- Modified Demo URL. 
+- Reordered readme.md contents.
+
+#### Release 1.0.6 - Changelog
+
+- Added bower support
+- Added angularJS support
+
+#### Release 1.0.5 - Changelog
+
+- Added live demo
+
+#### Release 1.0.4 - Changelog
+
+- Hotfix: composer support.
+- README.md modifications.
+
+#### Release 1.0.3 - Changelog
+
+- Hotfix: composer support.
+
+#### Release 1.0.2 - Changelog
+
+- Added composer support.
+- Added platform support (Windows Phone 8.0 & 8.1, amazon-fireos, tizen)
+
+#### Release 1.0.1 - Changelog
+
+- Added user css class support - https://github.com/linslin/pagingSlider/issues/4
+
+#### Release 1.0 - Changelog
+
+- Official stable release
+- Added cordova 3.6 & 4.0 support (iOS / Android / blackberry / firefoxos / browser)
+- Changed readme.md images paths. 
  
 ## Known Issues
   - Old Android Versions - Swipe does not work due quoJS/zepto.js. Fix -> "https://github.com/madrobby/zepto/issues/315"
